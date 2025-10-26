@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>EduVerse 8</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>EduVerse 8</h1>
+    <nav>
+      <button id="btn-login">Login / Account</button>
+      <button id="btn-guest">Continue as Guest</button>
+      <a href="flashcards.html">Flashcards</a>
+      <a href="random_quiz.html">Random Quiz</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="intro">
+      <p>Learn all 8 core subjects with lessons, quizzes, flashcards, and progress tracking.</p>
+    </section>
+
+    <section id="subjects-grid" class="grid"></section>
+  </main>
+
+  <footer>
+    <small>Prototype — Client-side. Host on GitHub Pages.</small>
+  </footer>
+
+  <dialog id="auth-dialog">
+    <form id="auth-form">
+      <h3 id="auth-title">Login</h3>
+      <label>Username <input id="username" required /></label>
+      <label>Password <input id="password" type="password" required /></label>
+      <div class="auth-actions">
+        <button type="submit" id="auth-submit">Login</button>
+        <button id="switch-to-signup" type="button">Switch to Sign up</button>
+        <button id="auth-close" type="button">Close</button>
+      </div>
+      <p class="small">Storing passwords in browser is only for demo. Use a real backend for production.</p>
+    </form>
+  </dialog>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
