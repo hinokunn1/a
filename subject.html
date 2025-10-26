@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Subject Viewer - EduVerse 8</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1 id="subject-title">Subject</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="flashcards.html">Flashcards</a>
+      <a href="random_quiz.html">Random Quiz</a>
+    </nav>
+  </header>
+
+  <main class="container subject-page">
+    <aside class="topics" id="topics-list">
+      <h3>Topics</h3>
+      <ul id="topics-ul"></ul>
+    </aside>
+
+    <section class="content" id="topic-content">
+      <div id="lesson-area">
+        <h2>Pick a topic</h2>
+        <div id="lesson-text"></div>
+      </div>
+
+      <div id="quiz-area">
+        <h3>Mini quiz</h3>
+        <div id="quiz-container"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <small>EduVerse 8 — subject viewer</small>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+  <script>
+    // subject page initialization
+    const params = new URLSearchParams(location.search);
+    const subjectKey = params.get('subject') || 'Math';
+    document.addEventListener('DOMContentLoaded', () => {
+      window.app && app.initSubjectPage(subjectKey);
+    });
+  </script>
+</body>
+</html>
